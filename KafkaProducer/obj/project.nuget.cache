@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "KvOYEpEmSONdBFJ3L1PstQsvaBY3bfh1+WiEZblqPe2iX0c8Hp0pBh9IVELWUT+lHle4PBUkdRoiHGERC97RHQ==",
+  "success": true,
+  "projectFilePath": "/home/alexander/Programming/dotnet/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj",
+  "expectedPackageFiles": [
+    "/home/alexander/.nuget/packages/confluent.kafka/2.3.0/confluent.kafka.2.3.0.nupkg.sha512",
+    "/home/alexander/.nuget/packages/librdkafka.redist/2.3.0/librdkafka.redist.2.3.0.nupkg.sha512",
+    "/home/alexander/.nuget/packages/microsoft.aspnetcore.openapi/8.0.3/microsoft.aspnetcore.openapi.8.0.3.nupkg.sha512",
+    "/home/alexander/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/alexander/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/home/alexander/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/home/alexander/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/home/alexander/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/home/alexander/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "/home/alexander/.nuget/packages/system.memory/4.5.0/system.memory.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
