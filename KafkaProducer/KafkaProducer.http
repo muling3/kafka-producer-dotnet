@@ -4,12 +4,12 @@ GET {{KafkaProducer_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
-POST {{{{KafkaProducer_HostAddress}}}}/publish
+POST {{KafkaProducer_HostAddress}}/publish
 Content-Type: application/json
 
 {
-    "pensionerName": "Anders Hejlsberg",
-    "age": 42,
-    "email": "andershel@gmail.com",
-    "phone": "+254709876566"
+    "PensionerName": "Anders Hejlsberg",
+    "Age": 42,
+    "Email": "andershel@gmail.com",
+    "Phone": "+254709876566"
 }
