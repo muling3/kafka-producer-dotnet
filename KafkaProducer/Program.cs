@@ -4,6 +4,7 @@ using Confluent.Kafka;
 using kafkaproducer.services;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 // var builder = WebApplication.CreateBuilder(args);
 

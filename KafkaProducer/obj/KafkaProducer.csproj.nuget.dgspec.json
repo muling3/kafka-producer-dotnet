@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/alexander/projects/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj": {}
+    "/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj": {}
   },
   "projects": {
-    "/home/alexander/projects/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj": {
+    "/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/alexander/projects/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj",
+        "projectUniqueName": "/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj",
         "projectName": "KafkaProducer",
-        "projectPath": "/home/alexander/projects/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj",
+        "projectPath": "/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj",
         "packagesPath": "/home/alexander/.nuget/packages/",
-        "outputPath": "/home/alexander/projects/kafka/kafka-producer-dotnet/KafkaProducer/obj/",
+        "outputPath": "/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/alexander/.nuget/NuGet/NuGet.Config"
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
