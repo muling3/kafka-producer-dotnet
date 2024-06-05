@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DwYLUEIUuRTkK8RD/RudBkWr4VfziKV9pRDz4huKZNw1jpMTIsOO2ycNVZ3/q3DX+azJMf1WQuvxk1fWKFHJQQ==",
+  "dgSpecHash": "5u4UFzqjfTJbOq3uXjMukJzI4aZNfwpBHl6ZRcfqFF71jFYK44VftaYys6eMP+r7/WQZTPQwxFendRJIt+khgA==",
   "success": true,
-  "projectFilePath": "/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj",
+  "projectFilePath": "/home/alexander/projects/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj",
   "expectedPackageFiles": [
     "/home/alexander/.nuget/packages/confluent.kafka/2.3.0/confluent.kafka.2.3.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/librdkafka.redist/2.3.0/librdkafka.redist.2.3.0.nupkg.sha512",

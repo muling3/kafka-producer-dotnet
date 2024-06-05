@@ -45,13 +45,36 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
 
-builder.Services.Configure<ProducerConfig>(builder.Configuration.GetSection("Kafka-Local"));
+// 1. ******* USING PRODUCER CONFIG ********
+// builder.Services.Configure<ProducerConfig>(builder.Configuration.GetSection("Kafka-Local"));
 
-builder.Services.AddSingleton<IProducer<String, String>>(sp =>
+// builder.Services.AddSingleton<IProducer<String, String>>(sp =>
+// {
+//     var config = sp.GetRequiredService<IOptions<ProducerConfig>>();
+
+//     return new ProducerBuilder<String, String>(config.Value)
+//         .Build();
+// });
+
+
+// 2. ****** USING CUSTOM CONFIG ******
+builder.Services.Configure<AppProducerConfig>(builder.Configuration.GetSection("Producer"));
+
+builder.Services.AddSingleton<ProducerConfig>(sp =>
 {
-    var config = sp.GetRequiredService<IOptions<ProducerConfig>>();
+    var config = sp.GetRequiredService<IOptions<AppProducerConfig>>().Value;
 
-    return new ProducerBuilder<String, String>(config.Value)
+    return new ProducerConfig
+    {
+        BootstrapServers = config.BootstrapServers,
+    };
+});
+
+builder.Services.AddSingleton<IProducer<string, string>>(sp =>
+{
+    var config = sp.GetRequiredService<ProducerConfig>();
+
+    return new ProducerBuilder<string, string>(config)
         .Build();
 });
 
@@ -70,6 +93,6 @@ app.MapControllers();
 app.Run();
 
 
-public record ClientReq(string PensionerName, string Email, string Phone, int Age)
+public record ClientReq(string Name, string Email, string Phone, int Age, string Award)
 {
 }

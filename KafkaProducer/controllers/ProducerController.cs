@@ -12,15 +12,18 @@ namespace KafkaProducer.Controllers;
 [Route("[controller]")]
 public class ProducerController : ControllerBase
 {
-    private const string TopicName = "sample_topic";
+    private const string TopicName = "pensioners_to_payroll";
 
     private readonly IProducer<String, String> _producer;
     private readonly ILogger<ProducerController> _logger;
+    private readonly string _topic;
 
-    public ProducerController(IProducer<String, String> producer, ILogger<ProducerController> logger)
+    public ProducerController(IProducer<String, String> producer, ILogger<ProducerController> logger, IOptions<AppProducerConfig> config)
     {
         _producer = producer;
         _logger = logger;
+        _topic = config.Value.Topic;
+
         logger.LogInformation("ProducerController is Active.");
     }
 
@@ -36,30 +39,18 @@ public class ProducerController : ControllerBase
     // [ProducesResponseType(typeof(String), (int)HttpStatusCode.Accepted)]
     public async Task<AcceptedResult> SendToTopic(ClientReq req)
     {
-        _logger.LogInformation("sample_topic");
+        _logger.LogInformation("pensioners_to_payroll");
 
         var eventMsg = new
         {
-            PensionerName = req.PensionerName,
+            Name = req.Name,
             Age = req.Age,
             Email = req.Email,
-            Phone = req.Phone
+            Phone = req.Phone,
+            Award = req.Award,
         };
 
         var result = await _producer.ProduceAsync(TopicName, new Message<string, string> { Key = req.Email, Value = JsonSerializer.Serialize(eventMsg) }
-        //    (deliveryRieport) =>
-        //                     {
-        //                         Console.WriteLine("delivery REPORT " + JsonSerializer.Serialize(deliveryReport));
-
-        //                         if (deliveryReport.Error.Code != ErrorCode.NoError)
-        //                         {
-        //                             Console.WriteLine($"Failed to deliver message: {deliveryReport.Error.Reason}");
-        //                         }
-        //                         else
-        //                         {
-        //                             Console.WriteLine($"Message published");
-        //                         }
-        //                     }
         );
 
         // release the message
