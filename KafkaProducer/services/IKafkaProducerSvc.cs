@@ -1,6 +1,6 @@
-namespace kafkaproducer.services;
+// namespace kafkaproducer.services;
 
-public interface IKafkaProducerSvc
-{
-    void produceMessage(ClientReq eventMsg, string topic);
-}
+// public interface IKafkaProducerSvc
+// {
+//     void produceMessage(ClientReq eventMsg, string topic);
+// }

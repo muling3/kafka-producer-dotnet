@@ -5,20 +5,25 @@ using Microsoft.AspNetCore.Mvc;
 using static Confluent.Kafka.ConfigPropertyNames;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace KafkaProducer.Controllers;
+
+public record ClientReq(string name, string email, string phone, int age, string award)
+{
+}
 
 [ApiController]
 [Route("[controller]")]
 public class ProducerController : ControllerBase
 {
-    private const string TopicName = "pensioners_to_payroll";
+    private const string TopicName = "test_topic";
 
-    private readonly IProducer<String, String> _producer;
+    private readonly IProducer<string, ClientReq> _producer;
     private readonly ILogger<ProducerController> _logger;
     private readonly string _topic;
 
-    public ProducerController(IProducer<String, String> producer, ILogger<ProducerController> logger, IOptions<AppProducerConfig> config)
+    public ProducerController(IProducer<string, ClientReq> producer, ILogger<ProducerController> logger, IOptions<AppProducerConfig> config)
     {
         _producer = producer;
         _logger = logger;
@@ -39,19 +44,13 @@ public class ProducerController : ControllerBase
     // [ProducesResponseType(typeof(String), (int)HttpStatusCode.Accepted)]
     public async Task<AcceptedResult> SendToTopic(ClientReq req)
     {
-        _logger.LogInformation("pensioners_to_payroll");
+        _logger.LogInformation($" TOPIC IS :: {_topic}");
 
-        var eventMsg = new
-        {
-            Name = req.Name,
-            Age = req.Age,
-            Email = req.Email,
-            Phone = req.Phone,
-            Award = req.Award,
-        };
+        var eventMsg = new ClientReq(req.name, req.email, req.phone, req.age, req.award);
+        // var eventMsg = new ClientReq(req.name);
 
-        var result = await _producer.ProduceAsync(TopicName, new Message<string, string> { Key = req.Email, Value = JsonSerializer.Serialize(eventMsg) }
-        );
+        var result = await _producer.ProduceAsync(_topic, new Message<string, ClientReq> { Key = req.email, Value = eventMsg });
+        _logger.LogInformation(" RESULT KEY {} : VALUE {} DELIVERY STATUS: {}", result.Key, result.Value.ToString(), result.Status.ToString());
 
         // release the message
         _producer.Flush(TimeSpan.FromSeconds(10));

@@ -1,10 +1,13 @@
 using System.Reflection.Metadata.Ecma335;
 using System.Text.Json;
 using Confluent.Kafka;
-using kafkaproducer.services;
+// using kafkaproducer.services;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Confluent.SchemaRegistry;
+using Confluent.SchemaRegistry.Serdes;
+using KafkaProducer.Controllers;
 
 // var builder = WebApplication.CreateBuilder(args);
 
@@ -60,6 +63,15 @@ builder.Services.AddSwaggerGen();
 // 2. ****** USING CUSTOM CONFIG ******
 builder.Services.Configure<AppProducerConfig>(builder.Configuration.GetSection("Producer"));
 
+builder.Services.Configure<SchemaRegistryConfig>(builder.Configuration.GetSection("Schema"));
+
+builder.Services.AddSingleton<ISchemaRegistryClient>(sp =>
+{
+    var config = sp.GetRequiredService<IOptions<SchemaRegistryConfig>>();
+
+    return new CachedSchemaRegistryClient(config.Value);
+});
+
 builder.Services.AddSingleton<ProducerConfig>(sp =>
 {
     var config = sp.GetRequiredService<IOptions<AppProducerConfig>>().Value;
@@ -70,11 +82,13 @@ builder.Services.AddSingleton<ProducerConfig>(sp =>
     };
 });
 
-builder.Services.AddSingleton<IProducer<string, string>>(sp =>
+builder.Services.AddSingleton<IProducer<string, ClientReq>>(sp =>
 {
     var config = sp.GetRequiredService<ProducerConfig>();
+    var schemaRegistry = sp.GetRequiredService<ISchemaRegistryClient>();
 
-    return new ProducerBuilder<string, string>(config)
+    return new ProducerBuilder<string, ClientReq>(config)
+        .SetValueSerializer(new JsonSerializer<ClientReq>(schemaRegistry))
         .Build();
 });
 
@@ -91,8 +105,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-
-public record ClientReq(string Name, string Email, string Phone, int Age, string Award)
-{
-}
