@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3abyBrRLfT7T4k15/OaiI5a09WuGZLuHieUZ4Gr0frpxbiSikEkZCIkbFzjL4PXqtmN/E777kwwLoIyi7QCaQg==",
+  "dgSpecHash": "JoWIQQNEjcv7ehIDRULbjtazU+QoKI9Rpg4plEmkC919LuZzyW1HS/nv1DWmAZEj294xvd6/ajnkD6o8xItAVA==",
   "success": true,
   "projectFilePath": "/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/KafkaProducer.csproj",
   "expectedPackageFiles": [
+    "/home/alexander/.nuget/packages/apache.avro/1.11.0/apache.avro.1.11.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/confluent.kafka/2.3.0/confluent.kafka.2.3.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/confluent.schemaregistry/2.3.0/confluent.schemaregistry.2.3.0.nupkg.sha512",
+    "/home/alexander/.nuget/packages/confluent.schemaregistry.serdes.avro/2.3.0/confluent.schemaregistry.serdes.avro.2.3.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/confluent.schemaregistry.serdes.json/2.3.0/confluent.schemaregistry.serdes.json.2.3.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/librdkafka.redist/2.3.0/librdkafka.redist.2.3.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/microsoft.aspnetcore.openapi/8.0.3/microsoft.aspnetcore.openapi.8.0.3.nupkg.sha512",
@@ -37,6 +39,7 @@
     "/home/alexander/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "/home/alexander/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/system.collections.concurrent/4.3.0/system.collections.concurrent.4.3.0.nupkg.sha512",
     "/home/alexander/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",

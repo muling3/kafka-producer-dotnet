@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
 using KafkaProducer.Controllers;
+using Avro;
 
 // var builder = WebApplication.CreateBuilder(args);
 
@@ -82,13 +83,14 @@ builder.Services.AddSingleton<ProducerConfig>(sp =>
     };
 });
 
-builder.Services.AddSingleton<IProducer<string, ClientReq>>(sp =>
+builder.Services.AddSingleton<IProducer<string, Pensioner>>(sp =>
 {
     var config = sp.GetRequiredService<ProducerConfig>();
     var schemaRegistry = sp.GetRequiredService<ISchemaRegistryClient>();
 
-    return new ProducerBuilder<string, ClientReq>(config)
-        .SetValueSerializer(new JsonSerializer<ClientReq>(schemaRegistry))
+    return new ProducerBuilder<string, Pensioner>(config)
+        .SetKeySerializer(Serializers.Utf8)
+        .SetValueSerializer(new AvroSerializer<Pensioner>(schemaRegistry))
         .Build();
 });
 

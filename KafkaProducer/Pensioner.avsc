@@ -1,0 +1,49 @@
+{
+  "namespace": "KafkaProducer.Avro",
+  "name": "Pensioner",
+  "type": "record",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "phone",
+      "type": "string"
+    },
+    {
+      "name": "award",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "type": "int"
+    },
+    {
+      "name": "attached_docs",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "PensionerDocs",
+          "namespace": "KafkaProducer.Avro",
+          "type": "record",
+          "fields": [
+            {
+              "name": "doc_name",
+              "type": "string"
+            },
+            {
+              "name": "doc_type",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "default": []
+    }
+  ]
+}

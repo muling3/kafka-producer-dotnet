@@ -63,3 +63,6 @@
 /home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/obj/Debug/net8.0/KafkaProducer.pdb
 /home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/obj/Debug/net8.0/KafkaProducer.genruntimeconfig.cache
 /home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/obj/Debug/net8.0/ref/KafkaProducer.dll
+/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/bin/Debug/net8.0/Avro.dll
+/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/bin/Debug/net8.0/Confluent.SchemaRegistry.Serdes.Avro.dll
+/home/alexander/Programming/dotnet/kafka/kafka-producer-dotnet/KafkaProducer/bin/Debug/net8.0/System.CodeDom.dll

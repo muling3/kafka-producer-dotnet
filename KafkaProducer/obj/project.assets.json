@@ -2,6 +2,26 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Apache.Avro/1.11.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
+          "System.CodeDom": "4.4.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Avro.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Avro.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Confluent.Kafka/2.3.0": {
         "type": "package",
         "dependencies": {
@@ -33,6 +53,26 @@
         },
         "runtime": {
           "lib/netstandard2.0/Confluent.SchemaRegistry.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Confluent.SchemaRegistry.Serdes.Avro/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Apache.Avro": "1.11.0",
+          "Confluent.Kafka": "2.3.0",
+          "Confluent.SchemaRegistry": "2.3.0",
+          "System.Net.NameResolution": "4.3.0",
+          "System.Net.Sockets": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Confluent.SchemaRegistry.Serdes.Avro.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Confluent.SchemaRegistry.Serdes.Avro.dll": {
             "related": ".xml"
           }
         }
@@ -535,6 +575,17 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "System.CodeDom/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {}
+        }
+      },
       "System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -968,7 +1019,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
+          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {
             "related": ".xml"
           }
         },
@@ -985,7 +1036,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
+          "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll": {
             "related": ".xml"
           }
         },
@@ -1452,6 +1503,23 @@
     }
   },
   "libraries": {
+    "Apache.Avro/1.11.0": {
+      "sha512": "JpBxUTE/JeVt9yugkIiu0N+FHl+SIihDjs4VZsGFmlZM42nntj2QB8nAdj5yu8LOla54pSAQqdqHcxPa458KWQ==",
+      "type": "package",
+      "path": "apache.avro/1.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "apache.avro.1.11.0.nupkg.sha512",
+        "apache.avro.nuspec",
+        "avro-logo.png",
+        "lib/netstandard2.0/Avro.dll",
+        "lib/netstandard2.0/Avro.xml",
+        "lib/netstandard2.1/Avro.dll",
+        "lib/netstandard2.1/Avro.xml"
+      ]
+    },
     "Confluent.Kafka/2.3.0": {
       "sha512": "JSBXN/X7bBNS92bgZp82v1oT58kw9ndpKSGC5VgELeM/HgXUTssFkG3gEPEGd3cOIa5MMJSLe6+gYwzzjdAJPw==",
       "type": "package",
@@ -1484,6 +1552,19 @@
         "lib/netstandard1.4/Confluent.SchemaRegistry.xml",
         "lib/netstandard2.0/Confluent.SchemaRegistry.dll",
         "lib/netstandard2.0/Confluent.SchemaRegistry.xml"
+      ]
+    },
+    "Confluent.SchemaRegistry.Serdes.Avro/2.3.0": {
+      "sha512": "tVDfktOXjdVdesL3g4imIHViaPK+CxtnuPUEKKJZWHo+K0PeXqf+0mk9ZML5cn9Ro7iEXMEAdSVR7v9ApJyaKQ==",
+      "type": "package",
+      "path": "confluent.schemaregistry.serdes.avro/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "confluent.schemaregistry.serdes.avro.2.3.0.nupkg.sha512",
+        "confluent.schemaregistry.serdes.avro.nuspec",
+        "lib/netstandard2.0/Confluent.SchemaRegistry.Serdes.Avro.dll",
+        "lib/netstandard2.0/Confluent.SchemaRegistry.Serdes.Avro.xml"
       ]
     },
     "Confluent.SchemaRegistry.Serdes.Json/2.3.0": {
@@ -2289,6 +2370,27 @@
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
         "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
+      ]
+    },
+    "System.CodeDom/4.4.0": {
+      "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
+      "type": "package",
+      "path": "system.codedom/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.xml",
+        "ref/netstandard2.0/System.CodeDom.dll",
+        "ref/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.4.4.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Collections/4.3.0": {
@@ -4822,6 +4924,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Confluent.Kafka >= 2.3.0",
+      "Confluent.SchemaRegistry.Serdes.Avro >= 2.3.0",
       "Confluent.SchemaRegistry.Serdes.Json >= 2.3.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.3",
       "Swashbuckle.AspNetCore >= 6.4.0"
@@ -4865,6 +4968,10 @@
         "targetAlias": "net8.0",
         "dependencies": {
           "Confluent.Kafka": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          },
+          "Confluent.SchemaRegistry.Serdes.Avro": {
             "target": "Package",
             "version": "[2.3.0, )"
           },
